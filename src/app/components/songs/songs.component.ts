@@ -1,5 +1,6 @@
 import {Component, Input, Inject, OnInit} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-songs',
@@ -21,10 +22,15 @@ export class SongsComponent {
 
   @Input() song!: string;
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  private url: string = '';
 
-  goToUrl(): void {
-    this.document.location.href = "";
+  constructor(@Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ) {
+    this.route.queryParams.subscribe((params: any) => {
+      this.url = params['song']
+    })
   }
 
+  goToUrl(): void {
+    this.document.location.href = this.url;
+  }
 }

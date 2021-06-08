@@ -5,9 +5,9 @@ import {Component, OnInit} from '@angular/core';
   template:`
     <p>Some genres here:</p>
     <nav>
-      <a routerLink="/songs" song="funkS">Funk</a>
-      <br><a routerLink="/songs">Soul</a>
-      <br><a routerLink="/songs">Jazz</a>
+      <a [routerLink]="['/songs']" [queryParams]="{song:funkS}">Funk</a>
+      <br><a [routerLink]="['/songs']" [queryParams]="{song:soulS}">Soul</a>
+      <br><a [routerLink]="['/songs']" [queryParams]="{song:jazzS}">Jazz</a>
     </nav>
 
   `
