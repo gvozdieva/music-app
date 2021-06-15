@@ -1,0 +1,19 @@
+{
+  "funk":
+    {
+      "url": "https://www.youtube.com/watch?v=W6GUV0C2mXo",
+      "author": "Marvin Gaye"
+    }
+  ,
+  "soul":
+    {
+    "url": "https://www.youtube.com/watch?v=XXx6RDzR6eM&list=PLLxR63CpId30GJl75bZOu1jKDK5vMHWO-&index=7",
+    "author": "Al Green"
+    }
+  ,
+  "jazz":
+    {
+    "url": "https://www.youtube.com/watch?v=ZEcqHA7dbwM",
+    "author": "Frank Sinatra"
+    }
+}

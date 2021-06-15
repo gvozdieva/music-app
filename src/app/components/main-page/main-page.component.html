@@ -1,11 +1,6 @@
-<!--<p>Some genres here:</p>-->
-<!--{{ funkS }}-->
-<!--<br>{{ soulS }}-->
-<!--<br>{{ jazzS }}-->
-<!--<br>-->
-<!--&lt;!&ndash;<a href="{{ jazzS }}" target="_blank">jazz</a>&ndash;&gt;-->
-<!--<nav>-->
-<!--  <a routerLink="/songs"><app-songs>Funk</app-songs></a>-->
-<!--  <br><a routerLink="/songs"><app-songs>Soul</app-songs></a>-->
-<!--  <br><a routerLink="/songs"><app-songs>Jazz</app-songs></a>-->
-<!--</nav>-->
+<p>Some genres here:</p>
+<nav>
+  <a [routerLink]="['/songs']" [queryParams]="{song:funkS}">Funk</a>
+  <br><a [routerLink]="['/songs']" [queryParams]="{song:soulS}">Soul</a>
+  <br><a [routerLink]="['/songs']" [queryParams]="{song:jazzS}">Jazz</a>
+</nav>

@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-authors',
-  template: `
-    <p>author name</p>
-  `
+  templateUrl: './authors.component.html'
 })
 export class AuthorsComponent implements OnInit {
 
