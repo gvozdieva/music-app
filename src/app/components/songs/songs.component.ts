@@ -11,18 +11,18 @@ export class SongsComponent {
 
   @Input() song!: string;
 
-  // private url: string = '';
-  //
-  // constructor(@Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ) {
-  //   this.route.queryParams.subscribe((params: any) => {
-  //     this.url = params['song']
-  //   })
-  // }
+  private url: string = '';
 
-  // goToUrl(): void {
-  //   this.document.location.href = this.url;
-  // }
+  constructor(@Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ) {
+    this.route.queryParams.subscribe((params: any) => {
+      this.url = params['song']
+    })
+  }
 
-  constructor(private http: HttpClient) { }
-  // CREATE FETCH REQUEST
+  goToUrl(): void {
+    this.document.location.href = this.url;
+  }
+
+  // constructor(private http: HttpClient) { }
+  // // CREATE FETCH REQUEST
 }

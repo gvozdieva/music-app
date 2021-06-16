@@ -1,0 +1,9 @@
+.test {
+  background-color: gray;
+  &-game {
+    color: red;
+  }
+  & .test-game {
+
+  }
+}
