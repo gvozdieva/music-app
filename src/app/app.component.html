@@ -1,8 +1,11 @@
 <div class="conteiner">
-  <app-main-page></app-main-page>
-  <app-songs></app-songs>
-  <app-authors></app-authors>
-  <app-genre-funk></app-genre-funk>
-  <app-genre-jazz></app-genre-jazz>
-  <app-genre-soul></app-genre-soul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="nav-link" [routerLink]="['/songs']" [queryParams]="{song:funkS}">Funk</a>
+    <a class="nav-link" [routerLink]="['/songs']" [queryParams]="{song:soulS}">Soul</a>
+    <a class="nav-link" [routerLink]="['/songs']" [queryParams]="{song:jazzS}">Jazz</a>
+  </nav>
+
+  <router-outlet></router-outlet>
 </div>
+
+

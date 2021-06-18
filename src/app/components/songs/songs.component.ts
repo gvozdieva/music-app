@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-songs',
-  templateUrl: './songs.component.html'
+  templateUrl: './songs.component.html',
+  styleUrls: ['./songs.component.scss']
 })
 export class SongsComponent {
 
