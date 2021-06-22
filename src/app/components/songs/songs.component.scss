@@ -1,4 +1,17 @@
 .conteiner {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  &-button-video {
+    width: 200px;
+  }
+  &-server-block {
+    margin-top: 15px;
+  }
+  &-input {
+    width: 500px;
+  }
+  &-input-block {
+    margin-top: 50px;
+  }
 }

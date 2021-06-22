@@ -1,6 +1,31 @@
 <div class="conteiner">
-  <button type="button" class="btn btn-outline-primary" (click)="goToUrl()">Click to listen!</button>
+  <button type="button" class="btn btn-outline-primary conteiner-button-video" (click)="goToUrl()">Click to listen!</button>
   <nav>
     <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" routerLink="/authors">click to see the author</a>
   </nav>
+
+  <div class="conteiner-input-block">
+    <p>Tape something (2 way binding exemple):</p>
+    <input
+      type="text"
+      class="form-control conteiner-input"
+      (input)="onUpdateServerName($event)">
+
+    <input
+      type="text"
+      class="form-control conteiner-input"
+      [(ngModel)]="ServerName">
+<!--    <p>{{ ServerName }}</p>-->
+
+    <div class="conteiner-server-block">
+      <button class="btn btn-secondary" type="button" (click)="onCreateServer()">Add Server</button>
+<!--      <p>{{ ServerCreationStatus }}</p>-->
+      <p *ngIf="ServerCreated; else noServer">Server was created, server name is {{ ServerName }}!!!</p>
+      <ng-template #noServer>
+        <p>No server was created</p>
+      </ng-template>
+    </div>
+  </div>
+
+
 </div>

@@ -10,6 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SongsComponent {
 
+  ServerCreationStatus = 'No server was created!'
+  ServerName = 'Testserver'
+  ServerCreated = false
+
   @Input() song!: string;
 
   private url: string = '';
@@ -22,6 +26,15 @@ export class SongsComponent {
 
   goToUrl(): void {
     this.document.location.href = this.url;
+  }
+
+  onCreateServer() {
+    this.ServerCreated = true
+    this.ServerCreationStatus = 'Server Created! Name is ' + this.ServerName
+}
+
+  onUpdateServerName(event: Event) {
+    this.ServerName = (<HTMLInputElement>event.target).value
   }
 
   // constructor(private http: HttpClient) { }
