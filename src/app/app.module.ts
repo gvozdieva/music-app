@@ -10,6 +10,8 @@ import { GenreSoulComponent } from './components/genre-soul/genre-soul.component
 import { GenreJazzComponent } from './components/genre-jazz/genre-jazz.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from "@angular/forms";
+import { SongsListComponent } from './components/songs/songs-list/songs-list.component';
+import { SongItemComponent } from './components/songs/songs-list/song-item/song-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {FormsModule} from "@angular/forms";
     AuthorsComponent,
     GenreFunkComponent,
     GenreSoulComponent,
-    GenreJazzComponent
+    GenreJazzComponent,
+    SongsListComponent,
+    SongItemComponent
   ],
   imports: [
     BrowserModule,

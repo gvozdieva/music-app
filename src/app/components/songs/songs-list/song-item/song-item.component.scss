@@ -1,0 +1,22 @@
+.conteiner {
+  background-color: #fcfcff;
+  border: 1px solid #d4e0ff;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+
+  &-song-name {
+    text-decoration: none;
+    color: #242572;
+    background-color: #d4e0ff;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 700;
+  }
+}

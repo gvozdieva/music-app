@@ -1,8 +1,17 @@
 <div class="conteiner">
-  <button type="button" class="btn btn-outline-primary conteiner-button-video" (click)="goToUrl()">Click to listen!</button>
+
+  <app-songs-list></app-songs-list>
+
+  <button type="button"
+          class="btn btn-outline-primary conteiner-button-video"
+          (click)="goToUrl()">Click to listen!</button>
   <nav>
-    <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" routerLink="/authors">click to see the author</a>
+    <a class="btn btn-link"
+       data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+       routerLink="/authors">click to see the author</a>
   </nav>
+
+
 
   <div class="conteiner-input-block">
     <p>Tape something (2 way binding exemple):</p>
@@ -18,12 +27,15 @@
 <!--    <p>{{ ServerName }}</p>-->
 
     <div class="conteiner-server-block">
-      <button class="btn btn-secondary" type="button" (click)="onCreateServer()">Add Server</button>
+      <button class="btn btn-secondary"
+              type="button"
+              (click)="onCreateServer()">Add Server</button>
 <!--      <p>{{ ServerCreationStatus }}</p>-->
       <p
         [ngClass]="{'color-white': ServerCreated === true}"
         [ngStyle]="{backgroundColor: getColor()}"
         *ngIf="ServerCreated; else noServer">Server was created, server name is {{ ServerName }}!!!</p>
+
       <ng-template #noServer>
         <p [ngStyle]="{backgroundColor: getColor()}">No server was created</p>
       </ng-template>
