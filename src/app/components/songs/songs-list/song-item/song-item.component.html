@@ -1,12 +1,27 @@
 <div class="conteiner">
-  <a class="conteiner-song-name" href="{{ url }}" target="_blank">{{ name }}</a>
+
+  <img *ngIf="imgUrl; else noImg" src="{{ imgUrl }}" alt="" class="conteiner-musicImg">
+  <ng-template #noImg>
+    <img class="conteiner-musicImg"  src="{{ noImgUrl }}" alt="No image">
+  </ng-template>
+
+  <a class="conteiner-song-name"
+     href="{{ url }}"
+     (click)="changeListened()"
+     target="_blank">{{ name }}</a>
   <p>{{ author }}</p>
   <p>{{ time }}</p>
 
 </div>
 
 <div class="listened">
-  <mark>
-    {{ listenedSong ? 'Listened' : null }}
+  <mark *ngIf="listenedSong; else listen">
+    Listened
   </mark>
+
+  <ng-template #listen>
+    <mark>
+      (Tab to listen)
+    </mark>
+  </ng-template>
 </div>

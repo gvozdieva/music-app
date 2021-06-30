@@ -23,7 +23,7 @@ import { SongItemComponent } from './components/songs/songs-list/song-item/song-
     GenreSoulComponent,
     GenreJazzComponent,
     SongsListComponent,
-    SongItemComponent
+    SongItemComponent,
   ],
   imports: [
     BrowserModule,
