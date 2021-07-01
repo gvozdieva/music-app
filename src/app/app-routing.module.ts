@@ -7,7 +7,7 @@ import {AuthorsComponent} from "./components/authors/authors.component";
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
-  {path: 'songs', component: SongsComponent},
+  {path: 'genre/:genreName', component: SongsComponent},
   {path: 'authors', component: AuthorsComponent}
 ]
 

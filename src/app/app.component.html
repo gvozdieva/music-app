@@ -1,9 +1,9 @@
 <div class="conteiner">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="nav-link btn btn-outline-warning" [routerLink]="['/']">MAIN</a>
-    <a class="nav-link" [routerLink]="['/songs']" [queryParams]="{song:funkS}">Funk</a>
-    <a class="nav-link" [routerLink]="['/songs']" [queryParams]="{song:soulS}">Soul</a>
-    <a class="nav-link" [routerLink]="['/songs']" [queryParams]="{song:jazzS}">Jazz</a>
+    <a class="nav-link btn btn-outline-warning" routerLink="/">MAIN</a>
+    <a class="nav-link" routerLink="/genre/funk">Funk</a>
+    <a class="nav-link" routerLink="/genre/soul">Soul</a>
+    <a class="nav-link" routerLink="//genre/jazz">Jazz</a>
   </nav>
 
   <router-outlet></router-outlet>
