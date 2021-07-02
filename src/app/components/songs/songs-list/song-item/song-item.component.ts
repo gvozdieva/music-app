@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-song-item',
@@ -6,7 +6,7 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./song-item.component.scss']
 })
 
-export class SongItemComponent {
+export class SongItemComponent implements OnInit{
   @Input() name: string = '';
   @Input() author: string = '';
   @Input() time: string = '';
@@ -19,9 +19,13 @@ export class SongItemComponent {
     this.listenedSong = true;
   }
 
-  noImgUrl = 'https://image.flaticon.com/icons/png/512/399/399274.png'
+  private noImgUrl = 'https://image.flaticon.com/icons/png/512/399/399274.png';
 
   constructor() { }
 
+
+  ngOnInit() {
+    this.imgUrl = this.imgUrl ? this.imgUrl : this.noImgUrl;
+  }
 
 }

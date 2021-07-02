@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes, Router, ActivatedRoute} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {MainPageComponent} from "./components/main-page/main-page.component";
 import {SongsComponent} from "./components/songs/songs.component";
 import {AuthorsComponent} from "./components/authors/authors.component";
