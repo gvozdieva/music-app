@@ -1,6 +1,8 @@
 <div class="conteiner">
   <h1 class="display-3">Songs list conteiner</h1>
 
+  <button (click)="onMusicService()">Click To See Music Service</button>
+  <p>{{ musicServiseSongs }}</p>
   <app-song-item
     *ngFor="let song of songs"
     [name]="song.name"

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import {SongModel} from "../song.model";
+import {MusicService} from "../../../music.service";
 
 @Component({
   selector: 'app-songs-list',
   templateUrl: './songs-list.component.html',
-  styleUrls: ['./songs-list.component.scss']
+  styleUrls: ['./songs-list.component.scss'],
+  providers: [MusicService]
 })
 export class SongsListComponent {
 
@@ -47,6 +49,13 @@ export class SongsListComponent {
     // add img url ( string 'url../../..' ; '')  если юрл пустой, отображать картинку 'noImage' ( use *ngIf else)
     )
   ]
-  constructor() { }
 
+  musicServiseSongs: string[] = ['']
+
+  constructor(private musicService: MusicService) {}
+
+  onMusicService() {
+    // let musicData = this.musicService.getData()
+    this.musicServiseSongs = this.musicService.getData()
+  }
 }
