@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import {SongModel} from "../song.model";
-import {MusicService} from "../../../music.service";
 
 @Component({
   selector: 'app-songs-list',
   templateUrl: './songs-list.component.html',
   styleUrls: ['./songs-list.component.scss'],
-  providers: [MusicService]
 })
 export class SongsListComponent {
 
@@ -50,12 +48,4 @@ export class SongsListComponent {
     )
   ]
 
-  musicServiseSongs: string[] = ['']
-
-  constructor(private musicService: MusicService) {}
-
-  onMusicService() {
-    // let musicData = this.musicService.getData()
-    this.musicServiseSongs = this.musicService.getData()
-  }
 }
