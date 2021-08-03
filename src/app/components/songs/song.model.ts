@@ -6,6 +6,5 @@ export class SongModel {
                public listenedSong: boolean,
                public newSong: boolean,
                public imgUrl: string
-  // add img url ( string 'url../../..' ; '')  если юрл пустой, отображать картинку 'noImage' ( use *ngIf else)
   ) {}
 }

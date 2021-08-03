@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {SongModel} from "../song.model";
 
 @Component({
   selector: 'app-songs-list',
@@ -8,33 +7,17 @@ import {SongModel} from "../song.model";
 })
 export class SongsListComponent {
 
-  songsArray = [
-    {
-      name: 'you',
-      url: 'https://www.youtube.com/watch?v=Zp1okMSCXEM',
-      author: 'mk.gee',
-      time: '5:10',
-      listenedSong: false,
-      newSong: true,
-      imgUrl: 'https://image.flaticon.com/icons/png/512/860/860780.png'
-    },
-    {
-      name: 'Groovejet (If This Ain\'t Love)',
-      url: 'https://www.youtube.com/watch?v=npJTeRjRX-8',
-      author: 'DJ Spiller feat. Sophie Ellis-Bextor',
-      time: '4:07',
-      listenedSong: false,
-      newSong: true,
-      imgUrl: 'https://image.flaticon.com/icons/png/512/860/860780.png'
-    },
-  ]
 
-  // onSongsArray() {
-  //   this.songsArray.map((item: any) => {
-  //     songs: SongModel[] = [
-  //       new SongModel( item.name, item.url, item.author, item.time, item.listenedSong, item.newSong, item.imgUrl)]
-  //   })
-  // }
+
+
+
+
+
+
+
+
+
+
 
 
   // songs: SongModel[] = [
