@@ -1,0 +1,32 @@
+
+h1 {
+  padding-bottom: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: #325670;
+  font-weight: bold;
+  background-color: rgba(255, 201, 0, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.time-and-listened {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.listenedLabel {
+  margin-left: 20px;
+  cursor: initial;
+}
+
+.name {
+  max-width: 100px;
+}
+
+td {
+  padding: 15px 15px 15px 0;
+}
