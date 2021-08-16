@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import { SongsListComponent } from './components/songs-list/songs-list.component';
 import { SongItemComponent } from './components/songs-list/song-item/song-item.component';
 import { ErrorComponent } from './components/error/error.component';
+import { SongFormComponent } from './components/song-form/song-form.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ErrorComponent } from './components/error/error.component';
     SongsListComponent,
     SongItemComponent,
     ErrorComponent,
+    SongFormComponent,
   ],
   imports: [
     BrowserModule,

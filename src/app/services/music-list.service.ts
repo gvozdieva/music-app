@@ -16,12 +16,6 @@ export class MusicListService {
     return this.songsList.filter(songsList => songsList.genre === genreName)
   }
 
-  // listened: boolean = true
-
-  // onListenedSong(i) {
-  //   this.listened = i.listened
-  // }
-
     songsList: Song[] = [
       {
         genre: 'funk',
