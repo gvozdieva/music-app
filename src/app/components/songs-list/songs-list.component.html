@@ -10,7 +10,6 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of songs">
-<!--        <th scope="row">1</th>-->
         <td class="name"><a href="{{ item.link }}" target="_blank" (click)="onListenedSong(item)" class="link">{{ item.name}}</a></td>
         <td>{{ item.author }}</td>
         <td> <div class="time-and-listened">{{ item.time }} <div *ngIf="item.listened" class="btn btn-light listenedLabel">Listened</div></div></td>

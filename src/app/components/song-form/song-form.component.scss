@@ -1,5 +1,4 @@
-.form-group,
-.ulr-input {
+.formItem {
   margin-top: 30px;
 }
 
@@ -10,4 +9,18 @@
   button {
    margin-right: 30px;
   }
+}
+
+input, select {
+  &.ng-invalid.ng-touched {
+    border-color: red;
+  }
+
+  &.ng-valid.ng-touched {
+    border-color: green;
+  }
+}
+
+.validation {
+  color: red;
 }

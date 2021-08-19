@@ -1,47 +1,50 @@
 <div class="container">
-  <form class="was-validated">
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-row">
 
-      <div class="form-group">
-        <select class="custom-select" required>
+      <div class="formItem">
+        <select formControlName="select">
           <option value="">Open this select menu</option>
-          <option value="1">Jazz</option>
-          <option value="2">Soul</option>
-          <option value="3">Funk</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Soul">Soul</option>
+          <option value="Funk">Funk</option>
         </select>
-        <div class="invalid-feedback">Example invalid custom select feedback</div>
+
+<!--        <div *ngIf="form.get('select').invalid" class="validation">-->
+<!--          <small>Choose one genre.</small>-->
+<!--        </div>-->
       </div>
 
-      <div class="form-group col-md-6">
+      <div class="formItem">
         <label for="Name">Name</label>
-        <input type="text" class="form-control" id="Name" placeholder="Name" required>
+        <input type="text" class="form-control" id="Name" placeholder="Name" formControlName="name">
       </div>
 
-      <div class="form-group">
+      <div class="formItem">
         <label for="Author">Author</label>
-        <input type="text" class="form-control" id="Author" placeholder="Author" required>
+        <input type="text" class="form-control" id="Author" placeholder="Author" formControlName="author">
       </div>
 
-      <div class="ulr-input">
+      <div class="formItem">
         <label for="url">Song URL</label>
         <div class="input-group mb-3">
-          <div class="input-group-prepend">
+          <div>
             <span class="input-group-text" id="basic-addon3">https://example.com/song/</span>
           </div>
-          <input type="url" class="form-control" id="url" aria-describedby="basic-addon3" required>
+          <input type="url" class="form-control" id="url" formControlName="url">
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="formItem">
         <label for="Time">Time</label>
-        <input type="text" class="form-control" id="Time" placeholder="4:20" required>
+        <input type="text" class="form-control" id="Time" placeholder="4:20" formControlName="time">
       </div>
 
     </div>
 
     <div class="buttons">
-      <button type="button" class="btn btn-secondary">Back</button>
-      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="/songs/allSongs"><button type="button" class="btn btn-secondary">Back</button></a>
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
     </div>
 
   </form>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 export interface Song {
+  id: number;
   genre: string;
   name: string;
   link: string;
@@ -18,6 +19,7 @@ export class MusicListService {
 
     songsList: Song[] = [
       {
+        id: 1,
         genre: 'funk',
         name: 'People Get Up And Drive Your Funky Soul',
         link: 'https://www.youtube.com/watch?v=Nl-RVIdTUVI',
@@ -26,6 +28,7 @@ export class MusicListService {
         listened: false,
       },
       {
+        id: 2,
         genre: 'funk',
         name: 'funk2',
         link: 'https://www.youtube.com/watch?v=Nl-RVIdTUVI',
@@ -34,6 +37,7 @@ export class MusicListService {
         listened: false,
       },
       {
+        id: 3,
         genre: 'soul',
         name: 'Sexual Healing',
         link: 'https://www.youtube.com/watch?v=rjlSiASsUIs',
@@ -42,6 +46,7 @@ export class MusicListService {
         listened: false,
       },
       {
+        id: 4,
         genre: 'soul',
         name: 'soul2',
         link: 'https://www.youtube.com/watch?v=rjlSiASsUIs',
@@ -50,6 +55,7 @@ export class MusicListService {
         listened: false,
       },
       {
+        id: 5,
         genre: 'jazz',
         name: 'I Love You Baby',
         link: 'https://www.youtube.com/watch?v=AiIBKcd4m5Q',
@@ -58,6 +64,7 @@ export class MusicListService {
         listened: false,
       },
       {
+        id: 6,
         genre: 'jazz',
         name: 'jazz2',
         link: 'https://www.youtube.com/watch?v=AiIBKcd4m5Q',

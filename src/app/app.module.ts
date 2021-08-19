@@ -9,6 +9,7 @@ import { SongsListComponent } from './components/songs-list/songs-list.component
 import { SongItemComponent } from './components/songs-list/song-item/song-item.component';
 import { ErrorComponent } from './components/error/error.component';
 import { SongFormComponent } from './components/song-form/song-form.component';
+import { AllSongsComponent } from './components/all-songs/all-songs.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SongFormComponent } from './components/song-form/song-form.component';
     SongItemComponent,
     ErrorComponent,
     SongFormComponent,
+    AllSongsComponent,
   ],
   imports: [
     BrowserModule,
