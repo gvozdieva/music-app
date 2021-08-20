@@ -1,0 +1,31 @@
+<div class="conteiner">
+
+  <div class="header">
+    <h1 class="display-3">All songs</h1>
+
+    <a class="nav-link" routerLink="/songs/create" routerLinkActive="activeLink">
+      <button type="button" class="btn btn-outline-dark create">ADD NEW SONG</button>
+    </a>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Song Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of songs">
+      <td>{{ item.id }}</td>
+      <td class="name"><a href="{{ item.link }}"  (click)="onListenedSong(item)" target="_blank" class="link">{{ item.name}}</a></td>
+      <td>{{ item.author }}</td>
+      <td>{{ item.genre }}</td>
+      <td> <div class="time-and-listened">{{ item.time }} <div *ngIf="item.listened" class="btn btn-light listenedLabel">Listened</div></div></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

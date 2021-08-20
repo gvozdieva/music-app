@@ -10,19 +10,27 @@
           <option value="Funk">Funk</option>
         </select>
 
-<!--        <div *ngIf="form.get('select').invalid" class="validation">-->
-<!--          <small>Choose one genre.</small>-->
-<!--        </div>-->
+        <div *ngIf="checkControl('select')" class="validation">
+          <small>Choose one genre.</small>
+        </div>
       </div>
 
       <div class="formItem">
         <label for="Name">Name</label>
         <input type="text" class="form-control" id="Name" placeholder="Name" formControlName="name">
+
+        <div *ngIf="checkControl('name')" class="validation">
+          <small>Type name.</small>
+        </div>
       </div>
 
       <div class="formItem">
         <label for="Author">Author</label>
         <input type="text" class="form-control" id="Author" placeholder="Author" formControlName="author">
+
+        <div *ngIf="checkControl('author')" class="validation">
+          <small>Type author.</small>
+        </div>
       </div>
 
       <div class="formItem">
@@ -33,6 +41,10 @@
           </div>
           <input type="url" class="form-control" id="url" formControlName="url">
         </div>
+
+        <div *ngIf="checkControl('url')" class="validation">
+          <small>Type correct http url.</small>
+        </div>
       </div>
 
       <div class="formItem">
@@ -40,6 +52,9 @@
         <input type="text" class="form-control" id="Time" placeholder="4:20" formControlName="time">
       </div>
 
+      <div *ngIf="checkControl('time')" class="validation">
+        <small>Type song time.</small>
+      </div>
     </div>
 
     <div class="buttons">

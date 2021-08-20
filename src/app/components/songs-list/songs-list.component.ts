@@ -22,6 +22,7 @@ export class SongsListComponent implements OnInit{
     private MusicListService: MusicListService
   ) {}
 
+
   ngOnInit(): any {
       this.route.params.subscribe( (params: Params) => {
         this.songs = this.MusicListService.sortByGenre(params.genreName);

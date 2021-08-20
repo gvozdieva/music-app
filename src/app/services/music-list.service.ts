@@ -17,6 +17,13 @@ export class MusicListService {
     return this.songsList.filter(songsList => songsList.genre === genreName)
   }
 
+  addNewSong(songItem: any) {
+    songItem.id = this.songsList.length + 1;
+    songItem.listened = false;
+
+    this.songsList.push(songItem);
+  }
+
     songsList: Song[] = [
       {
         id: 1,
