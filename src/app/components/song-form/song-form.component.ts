@@ -1,6 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {MusicListService} from "../../services/music-list.service";
+import {MusicListService, Song} from "../../services/music-list.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-song-form',
@@ -11,9 +12,20 @@ export class SongFormComponent implements OnInit {
   form!: FormGroup
   songsList = this.MusicListService.songsList
 
+  element: any
+
   constructor(
-    private MusicListService: MusicListService
+    private MusicListService: MusicListService,
+    private activatedRoute: ActivatedRoute,
   ) {
+    const id: string = activatedRoute.snapshot.params.id;
+    // console.log(id)
+
+    this.songsList.filter(el => {
+      if (+id === +el.id) this.element = el.name
+        // return this.element
+    })
+    console.log(this.element)
   }
 
   ngOnInit () {

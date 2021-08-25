@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MusicListService} from "../../services/music-list.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-all-songs',
   templateUrl: './all-songs.component.html',
-  styleUrls: ['./all-songs.component.css']
+  styleUrls: ['./all-songs.component.scss']
 })
 export class AllSongsComponent implements OnInit {
 
@@ -18,7 +19,8 @@ export class AllSongsComponent implements OnInit {
 
   constructor(
     private MusicListService: MusicListService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }

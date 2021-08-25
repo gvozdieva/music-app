@@ -16,6 +16,7 @@
       <th scope="col">Author</th>
       <th scope="col">Genre</th>
       <th scope="col">Time</th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -25,6 +26,11 @@
       <td>{{ item.author }}</td>
       <td>{{ item.genre }}</td>
       <td> <div class="time-and-listened">{{ item.time }} <div *ngIf="item.listened" class="btn btn-light listenedLabel">Listened</div></div></td>
+      <td>
+        <a class="nav-link" routerLink="/songs/edit/{{item.id}}">
+          <button type="button" class="btn btn-secondary">Edit</button>
+        </a>
+      </td>
     </tr>
     </tbody>
   </table>
