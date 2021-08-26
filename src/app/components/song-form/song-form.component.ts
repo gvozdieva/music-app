@@ -28,13 +28,15 @@ export class SongFormComponent implements OnInit {
     this.songsList.filter(el => {
       if (+id === +el.id)
         this.elementName = el.name,
-        this.elementAuthor = el.author,
-        this.elementTime = el.time,
-        this.elementUrl = el.link,
-        this.elementGenre = el.genre
+          this.elementAuthor = el.author,
+          this.elementTime = el.time,
+          this.elementUrl = el.link,
+          this.elementGenre = el.genre
       // return this.element
     })
     console.log(this.elementName)
+
+    // console.log(activatedRoute)
   }
 
   ngOnInit () {
@@ -49,7 +51,6 @@ export class SongFormComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-
 
       console.log('Form: ', this.form)
       const formData = {...this.form.value}
@@ -74,12 +75,12 @@ export class SongFormComponent implements OnInit {
     }
   }
 
-  onCreateClick() {
-    if (this.form.get('select')) {
-      // @ts-ignore
-      console.log(this.form.get('select').status);
-    }
-  }
+  // onCreateClick() {
+  //   if (this.form.get('select')) {
+  //     // @ts-ignore
+  //     console.log(this.form.get('select').status);
+  //   }
+  // }
 
   checkControl(name: any) {
     // @ts-ignore
