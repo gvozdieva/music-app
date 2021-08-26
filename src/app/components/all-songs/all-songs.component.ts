@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './all-songs.component.html',
   styleUrls: ['./all-songs.component.scss']
 })
-export class AllSongsComponent implements OnInit {
+export class AllSongsComponent {
 
   songs = this.MusicListService.songsList
 
@@ -22,7 +22,5 @@ export class AllSongsComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
-  }
 
 }

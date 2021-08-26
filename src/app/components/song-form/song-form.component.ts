@@ -12,7 +12,11 @@ export class SongFormComponent implements OnInit {
   form!: FormGroup
   songsList = this.MusicListService.songsList
 
-  element: any
+  elementName: any
+  elementAuthor: any
+  elementUrl: any
+  elementTime: any
+  elementGenre: any
 
   constructor(
     private MusicListService: MusicListService,
@@ -22,19 +26,24 @@ export class SongFormComponent implements OnInit {
     // console.log(id)
 
     this.songsList.filter(el => {
-      if (+id === +el.id) this.element = el.name
-        // return this.element
+      if (+id === +el.id)
+        this.elementName = el.name,
+        this.elementAuthor = el.author,
+        this.elementTime = el.time,
+        this.elementUrl = el.link,
+        this.elementGenre = el.genre
+      // return this.element
     })
-    console.log(this.element)
+    console.log(this.elementName)
   }
 
   ngOnInit () {
     this.form = new FormGroup({
-      url: new FormControl('', Validators.required),
-      select: new FormControl('', Validators.required),
-      name: new FormControl('', Validators.required),
-      author: new FormControl('', Validators.required),
-      time: new FormControl('', Validators.required),
+      url: new FormControl('' || this.elementUrl, Validators.required),
+      select: new FormControl('' || this.elementGenre, Validators.required),
+      name: new FormControl('' || this.elementName, Validators.required),
+      author: new FormControl('' || this.elementAuthor, Validators.required),
+      time: new FormControl('' || this.elementTime, Validators.required),
     })
   }
 
