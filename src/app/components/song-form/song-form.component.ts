@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MusicListService, Song} from "../../services/music-list.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-song-form',
@@ -18,9 +18,12 @@ export class SongFormComponent implements OnInit {
   elementTime: any
   elementGenre: any
 
+  public editMode = false
+
   constructor(
     private MusicListService: MusicListService,
     private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
     const id: string = activatedRoute.snapshot.params.id;
     // console.log(id)
@@ -47,31 +50,44 @@ export class SongFormComponent implements OnInit {
       author: new FormControl('' || this.elementAuthor, Validators.required),
       time: new FormControl('' || this.elementTime, Validators.required),
     })
+  const routerUrl = this.router.url
+    this.editMode = routerUrl.includes('edit')
+    console.log(this.editMode)
   }
 
   submit() {
     if (this.form.valid) {
 
-      console.log('Form: ', this.form)
+      // console.log('Form: ', this.form)
       const formData = {...this.form.value}
-      console.log('FormData : ', formData)
-      // const id = this.songsList.length + 1
+      // console.log('FormData : ', formData)
+
       const author = formData.author
       const url = formData.url
       const genre = formData.select
       const time = formData.time
       const name = formData.name
 
-      this.MusicListService.addNewSong({
-        genre: genre,
-        name: name,
-        link: url,
-        author: author,
-        time: time
-      })
+      if (!this.editMode) {
+        this.MusicListService.addNewSong({
+          genre: genre,
+          name: name,
+          link: url,
+          author: author,
+          time: time
+        })
 
-      // clear all fields on submit
-      this.form.reset()
+        // clear all fields on submit
+        this.form.reset()
+      }
+
+      if (this.editMode) {
+        //need to change array (arr[2] = 5) (like this)
+
+
+        // clear all fields on submit
+        this.form.reset()
+      }
     }
   }
 
