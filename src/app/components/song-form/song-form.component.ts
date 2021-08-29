@@ -12,6 +12,8 @@ export class SongFormComponent implements OnInit {
   form!: FormGroup
   songsList = this.MusicListService.songsList
 
+  id: string = this.activatedRoute.snapshot.params.id;
+
   elementName: any
   elementAuthor: any
   elementUrl: any
@@ -23,9 +25,9 @@ export class SongFormComponent implements OnInit {
   constructor(
     private MusicListService: MusicListService,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) {
-    const id: string = activatedRoute.snapshot.params.id;
+    const id = activatedRoute.snapshot.params.id;
     // console.log(id)
 
     this.songsList.filter(el => {
@@ -37,7 +39,7 @@ export class SongFormComponent implements OnInit {
           this.elementGenre = el.genre
       // return this.element
     })
-    console.log(this.elementName)
+    // console.log(this.elementName)
 
     // console.log(activatedRoute)
   }
@@ -50,9 +52,10 @@ export class SongFormComponent implements OnInit {
       author: new FormControl('' || this.elementAuthor, Validators.required),
       time: new FormControl('' || this.elementTime, Validators.required),
     })
-  const routerUrl = this.router.url
+
+    const routerUrl = this.router.url
     this.editMode = routerUrl.includes('edit')
-    console.log(this.editMode)
+    //console.log(this.editMode)
   }
 
   submit() {
@@ -83,6 +86,12 @@ export class SongFormComponent implements OnInit {
 
       if (this.editMode) {
         //need to change array (arr[2] = 5) (like this)
+          this.songsList.find((el, id) => {
+            //console.log(el)
+            if (el.id === id) {
+              // console.log(el)
+            }
+          })
 
 
         // clear all fields on submit
