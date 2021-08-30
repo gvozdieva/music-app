@@ -12,7 +12,7 @@ export class SongFormComponent implements OnInit {
   form!: FormGroup
   songsList = this.MusicListService.songsList
 
-  id: string = this.activatedRoute.snapshot.params.id;
+  id: any = this.activatedRoute.snapshot.params.id;
 
   elementName: any
   elementAuthor: any
@@ -55,15 +55,23 @@ export class SongFormComponent implements OnInit {
 
     const routerUrl = this.router.url
     this.editMode = routerUrl.includes('edit')
-    //console.log(this.editMode)
+    console.log('editMode', this.editMode)
   }
 
-  submit() {
+  // onSubmitEdit() {
+  //   this.songsList.map(el => el.id)
+  // }
+
+  index = this.songsList.indexOf(this.id)
+  el = this.songsList[this.index]
+
+  submit(e: any) {
     if (this.form.valid) {
 
       // console.log('Form: ', this.form)
       const formData = {...this.form.value}
       // console.log('FormData : ', formData)
+      // console.log('songs list : ', this.songsList)
 
       const author = formData.author
       const url = formData.url
@@ -85,30 +93,41 @@ export class SongFormComponent implements OnInit {
       }
 
       if (this.editMode) {
-        //need to change array (arr[2] = 5) (like this)
-          this.songsList.find((el, id) => {
-            //console.log(el)
-            if (el.id === id) {
-              // console.log(el)
-            }
-          })
+      //   console.log(formData)
+      //   this.songsList.map((el) => {
+      //     if (el.id === this.id) {
+      //       console.log(el)
+      //     }
+      //   })
+      //
+      //   this.editSong(this.id, "foo", 'keke', 'soul', '4326', 'nana');
+      //
+      //   console.log(this.songsList)
 
-
-        // clear all fields on submit
-        this.form.reset()
+        this.el.name = name;
+        this.el.genre = genre;
+        this.el.link = url;
+        this.el.author = author;
+        this.el.time = time;
       }
+
     }
   }
-
-  // onCreateClick() {
-  //   if (this.form.get('select')) {
-  //     // @ts-ignore
-  //     console.log(this.form.get('select').status);
-  //   }
-  // }
 
   checkControl(name: any) {
     // @ts-ignore
     return this.form.get(name)?.touched && this.form.get(name)?.invalid;
   }
+
+
+  // editSong(id: number, author: string, url: string, genre: string, time: string, name: string) {
+  //   this.songsList.forEach(obj => {
+  //     if (obj.id === this.id) {
+  //       return {...obj, author, url, genre, time, name};
+  //     }
+  //     return obj;
+  //   });
+  //   console.log(id);
+  // }
+
 }
