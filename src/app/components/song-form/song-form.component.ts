@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class SongFormComponent implements OnInit {
   public form!: FormGroup;
-  public songsList = this.MusicListService.getAllSongs();
+  public songsList: any = this.MusicListService.getJsonData();
   public id = this.activatedRoute.snapshot.params.id;
 
   elementName: any;
