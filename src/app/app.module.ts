@@ -10,6 +10,7 @@ import { SongItemComponent } from './components/songs-list/song-item/song-item.c
 import { ErrorComponent } from './components/error/error.component';
 import { SongFormComponent } from './components/song-form/song-form.component';
 import { AllSongsComponent } from './components/all-songs/all-songs.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AllSongsComponent } from './components/all-songs/all-songs.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

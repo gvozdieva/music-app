@@ -1,19 +1,23 @@
 {
-  "funk":
+  "songs": [
     {
-      "url": "https://www.youtube.com/watch?v=W6GUV0C2mXo",
-      "author": "Marvin Gaye"
-    }
-  ,
-  "soul":
+      "id": 1,
+      "genre": "funk",
+      "name": "People Get Up And Drive Your Funky Soul",
+      "link": "https://www.youtube.com/watch?v=Nl-RVIdTUVI",
+      "author": "James Brown",
+      "time": "9:04",
+      "listened": false
+    },
     {
-    "url": "https://www.youtube.com/watch?v=XXx6RDzR6eM&list=PLLxR63CpId30GJl75bZOu1jKDK5vMHWO-&index=7",
-    "author": "Al Green"
+      "id": 2,
+      "genre": "funk",
+      "name": "funk2",
+      "link": "https://www.youtube.com/watch?v=Nl-RVIdTUVI",
+      "author": "James Brown",
+      "time": "9:04",
+      "listened": false
     }
-  ,
-  "jazz":
-    {
-    "url": "https://www.youtube.com/watch?v=ZEcqHA7dbwM",
-    "author": "Frank Sinatra"
-    }
+  ]
 }
+

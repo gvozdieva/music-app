@@ -7,19 +7,22 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './all-songs.component.html',
   styleUrls: ['./all-songs.component.scss']
 })
-export class AllSongsComponent {
+export class AllSongsComponent implements OnInit{
 
-  songs = this.MusicListService.songsList
+  songs: any
 
   listen: boolean = true
 
-  onListenedSong(item: any) {
-    item.listened = this.listen
-  }
-
   constructor(
     private MusicListService: MusicListService
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.songs = this.MusicListService.getAllSongs()
+  }
+
+  onListenedSong(item: any) {
+    item.listened = this.listen
   }
 
 

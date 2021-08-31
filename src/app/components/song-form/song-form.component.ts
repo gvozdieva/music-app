@@ -9,29 +9,27 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./song-form.component.scss']
 })
 export class SongFormComponent implements OnInit {
-  form!: FormGroup
-  songsList = this.MusicListService.songsList
+  public form!: FormGroup;
+  public songsList = this.MusicListService.getAllSongs();
+  public id = this.activatedRoute.snapshot.params.id;
 
-  id: any = this.activatedRoute.snapshot.params.id;
+  elementName: any;
+  elementAuthor: any;
+  elementUrl: any;
+  elementTime: any;
+  elementGenre: any;
 
-  elementName: any
-  elementAuthor: any
-  elementUrl: any
-  elementTime: any
-  elementGenre: any
-
-  public editMode = false
+  public editMode = false;
 
   constructor(
     private MusicListService: MusicListService,
     private activatedRoute: ActivatedRoute,
     private router: Router
-  ) {
-    const id = activatedRoute.snapshot.params.id;
-    // console.log(id)
+  ) {}
 
-    this.songsList.filter(el => {
-      if (+id === +el.id)
+  ngOnInit () {
+    this.songsList.filter((el:any) => {
+      if (+this.id === +el.id)
         this.elementName = el.name,
           this.elementAuthor = el.author,
           this.elementTime = el.time,
@@ -39,12 +37,7 @@ export class SongFormComponent implements OnInit {
           this.elementGenre = el.genre
       // return this.element
     })
-    // console.log(this.elementName)
 
-    // console.log(activatedRoute)
-  }
-
-  ngOnInit () {
     this.form = new FormGroup({
       url: new FormControl('' || this.elementUrl, Validators.required),
       select: new FormControl('' || this.elementGenre, Validators.required),
@@ -90,25 +83,15 @@ export class SongFormComponent implements OnInit {
 
         // clear all fields on submit
         this.form.reset()
-      }
-
-      if (this.editMode) {
-      //   console.log(formData)
-      //   this.songsList.map((el) => {
-      //     if (el.id === this.id) {
-      //       console.log(el)
-      //     }
-      //   })
-      //
-      //   this.editSong(this.id, "foo", 'keke', 'soul', '4326', 'nana');
-      //
-      //   console.log(this.songsList)
-
-        this.el.name = name;
-        this.el.genre = genre;
-        this.el.link = url;
-        this.el.author = author;
-        this.el.time = time;
+      } else {
+        this.MusicListService.updateSong({
+          id: +this.id,
+          name: name,
+          genre: genre,
+          link: url,
+          author: author,
+          time: time
+        });
       }
 
     }
