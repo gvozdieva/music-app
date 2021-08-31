@@ -28,6 +28,11 @@ export class SongFormComponent implements OnInit {
   ) {}
 
   ngOnInit () {
+    this.songsList.subscribe((response: any) => {
+      this.songsList = response
+      return this.songsList
+    })
+
     this.songsList.filter((el:any) => {
       if (+this.id === +el.id)
         this.elementName = el.name,
