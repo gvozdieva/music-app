@@ -1,23 +1,29 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MusicListService, Song} from "../../services/music-list.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-song-form',
   templateUrl: './song-form.component.html',
   styleUrls: ['./song-form.component.scss']
 })
-export class SongFormComponent implements OnInit {
+export class SongFormComponent implements OnInit, OnDestroy {
   public form!: FormGroup;
-  public songsList: any = this.MusicListService.getJsonData();
-  public id = this.activatedRoute.snapshot.params.id;
+  public songsList: any;
+  public id: any;
 
   elementName: any;
   elementAuthor: any;
   elementUrl: any;
   elementTime: any;
   elementGenre: any;
+
+  index: any;
+  el: any;
+
+  public subscr: Subscription = new Subscription();
 
   public editMode = false;
 
@@ -28,20 +34,8 @@ export class SongFormComponent implements OnInit {
   ) {}
 
   ngOnInit () {
-    this.songsList.subscribe((response: any) => {
-      this.songsList = response
-      return this.songsList
-    })
-
-    this.songsList.filter((el:any) => {
-      if (+this.id === +el.id)
-        this.elementName = el.name,
-          this.elementAuthor = el.author,
-          this.elementTime = el.time,
-          this.elementUrl = el.link,
-          this.elementGenre = el.genre
-      // return this.element
-    })
+    // this.songsList = this.MusicListService.getJsonData();
+    this.id = this.activatedRoute.snapshot.params.id;
 
     this.form = new FormGroup({
       url: new FormControl('' || this.elementUrl, Validators.required),
@@ -54,14 +48,53 @@ export class SongFormComponent implements OnInit {
     const routerUrl = this.router.url
     this.editMode = routerUrl.includes('edit')
     console.log('editMode', this.editMode)
+
+
+    this.subscr = this.MusicListService.dataLoaded.subscribe(status => {
+      if (status) {
+        if (this.editMode) {
+          //get song by id from service
+          const song = this.MusicListService.getSongById(this.id);
+
+          this.initData(song);
+          console.log(song);
+        }
+      }
+    })
+
+
+
+    // this.MusicListService.getJsonData().subscribe((response: any) => {
+    //   this.initData(response);
+    // })
+  }
+
+  public initData(song: any) {
+
+
+
+        this.elementName = song.name;
+          this.elementAuthor = song.author;
+          this.elementTime = song.time;
+          this.elementUrl = song.link;
+          this.elementGenre = song.genre;
+        // return this.element
+
+        this.form.setValue({
+          select: this.elementGenre,
+          url: this.elementUrl,
+          name: this.elementName,
+          author: this.elementAuthor,
+          time: this.elementTime
+        });
+
+    // this.index = this.songsList.indexOf(this.id)
+    // this.el = this.songsList[this.index]
   }
 
   // onSubmitEdit() {
   //   this.songsList.map(el => el.id)
   // }
-
-  index = this.songsList.indexOf(this.id)
-  el = this.songsList[this.index]
 
   submit(e: any) {
     if (this.form.valid) {
@@ -117,5 +150,10 @@ export class SongFormComponent implements OnInit {
   //   });
   //   console.log(id);
   // }
+
+
+  ngOnDestroy() {
+    this.subscr.unsubscribe();
+  }
 
 }

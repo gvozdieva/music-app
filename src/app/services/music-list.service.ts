@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {BehaviorSubject} from "rxjs";
 export interface Song {
   id: number;
   genre: string;
@@ -15,6 +16,7 @@ export interface Song {
 })
 export class MusicListService {
   songsList: Song[] = []
+  dataLoaded = new BehaviorSubject(false);
 
   // songsList: Song[] = [
   //   {
@@ -75,8 +77,22 @@ export class MusicListService {
 
   constructor(private http: HttpClient) {
   }
+  getSongsList() {
+    return this.songsList;
+  }
+
+  setSongsList(songsList: any) {
+    this.songsList = songsList;
+    this.dataLoaded.next(true);
+  }
+
+  getSongById(id: any) {
+    const index = this.songsList.findIndex((song: Song) => {return song.id === +id;});
+    return this.songsList[index];
+  }
 
   getJsonData() {
+    this.dataLoaded.next(false);
     return this.http.get<Song[]>('http://localhost:3004/songs')
   }
 
