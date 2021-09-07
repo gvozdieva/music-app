@@ -7,14 +7,14 @@ import {MusicListService} from "./services/music-list.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'music-app';
+  login = true
+  logout = false
 
   constructor(
     private MusicListService: MusicListService
   ) {}
 
   ngOnInit() {
-    console.log('AppComponent');
     this.MusicListService.getJsonData().subscribe((response: any) => {
       this.MusicListService.setSongsList(response);
     })

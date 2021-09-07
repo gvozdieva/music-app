@@ -21,7 +21,6 @@ export class AllSongsComponent implements OnInit, OnDestroy{
   ) {}
 
   ngOnInit() {
-    console.log('AllSongsComponent');
     this.subscr = this.MusicListService.dataLoaded.subscribe(status => {
       if (status) {
         this.songs = this.MusicListService.getSongsList();

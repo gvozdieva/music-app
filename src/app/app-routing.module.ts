@@ -6,6 +6,7 @@ import {ErrorComponent} from "./components/error/error.component";
 import {SongsListComponent} from "./components/songs-list/songs-list.component";
 import {SongFormComponent} from "./components/song-form/song-form.component";
 import {AllSongsComponent} from "./components/all-songs/all-songs.component";
+import {LoginComponent} from "./components/login/login.component";
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   {path: 'songs/create', component: SongFormComponent},
   {path: 'songs/edit/:id', component: SongFormComponent},
   {path: 'songs/allSongs', component: AllSongsComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'error', component: ErrorComponent },
   {path: '**', redirectTo: 'error' },
 ]
