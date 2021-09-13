@@ -13,6 +13,7 @@ import { AllSongsComponent } from './components/all-songs/all-songs.component';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     AllSongsComponent,
     LoginComponent,
     LogoutComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

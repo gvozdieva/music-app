@@ -7,9 +7,10 @@
     <a class="nav-link" routerLink="songs/allSongs" routerLinkActive="activeLink">All songs</a>
   </nav>
 
-  <a class="auth nav-link" routerLink="login" *ngIf="login; else logout">Login</a>
-  <ng-template #logout>
-    <a class="auth nav-link" routerLinkActive="activeLink">Logout</a>
+  <a class="auth nav-link" routerLink="signin" *ngIf="login; else signout">Sign in</a>
+  <a class="auth nav-link" routerLink="signup" *ngIf="login; else signout">Sign up</a>
+  <ng-template #signout>
+    <a class="auth nav-link" routerLinkActive="activeLink">Sign out</a>
   </ng-template>
 
   <router-outlet></router-outlet>

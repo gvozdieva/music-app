@@ -10,7 +10,6 @@ export class LoginComponent {
 
   onSubmit() {
     this.submitted = true
-
   }
 
 }

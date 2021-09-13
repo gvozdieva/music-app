@@ -47,7 +47,7 @@ export class SongFormComponent implements OnInit, OnDestroy {
 
     const routerUrl = this.router.url
     this.editMode = routerUrl.includes('edit')
-    console.log('editMode', this.editMode)
+    // console.log('editMode', this.editMode)
 
 
     this.subscr = this.MusicListService.dataLoaded.subscribe(status => {
@@ -57,7 +57,7 @@ export class SongFormComponent implements OnInit, OnDestroy {
           const song = this.MusicListService.getSongById(this.id);
 
           this.initData(song);
-          console.log(song);
+          // console.log(song);
         }
       }
     })
