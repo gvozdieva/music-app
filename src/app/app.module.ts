@@ -12,7 +12,6 @@ import { SongFormComponent } from './components/song-form/song-form.component';
 import { AllSongsComponent } from './components/all-songs/all-songs.component';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './components/login/login.component';
-import { LogoutComponent } from './components/logout/logout.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     SongFormComponent,
     AllSongsComponent,
     LoginComponent,
-    LogoutComponent,
     SignUpComponent,
   ],
   imports: [

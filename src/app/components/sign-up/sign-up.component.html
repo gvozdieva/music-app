@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSignUp(f)" #f="ngForm">
+
+  <div class="form-row">
+    <div class="formItem">
+      <label class="distance" for="username">Create Username</label>
+      <input id="username" name="username" type="text" class="form-control" placeholder="My name">
+    </div>
+    <div class="formItem">
+      <label class="distance" for="password">Create Password</label>
+      <input id="password" name="password" type="password" class="form-control" placeholder="My password">
+    </div>
+
+    <button type="submit" class="formItem btn btn-success">Sign up</button>
+  </div>
+</form>
+
