@@ -13,7 +13,7 @@ import { AllSongsComponent } from './components/all-songs/all-songs.component';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { TestDirective } from './components/main-page/test.directive';
+
 
 @NgModule({
   declarations: [
@@ -25,8 +25,7 @@ import { TestDirective } from './components/main-page/test.directive';
     SongFormComponent,
     AllSongsComponent,
     LoginComponent,
-    SignUpComponent,
-    TestDirective,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
