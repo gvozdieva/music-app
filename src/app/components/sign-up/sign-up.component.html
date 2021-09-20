@@ -1,18 +1,22 @@
 <!--<form (ngSubmit)="onSignUp(f)" #f="ngForm">-->
-<form>
+<form [formGroup]="form" (ngSubmit)="submit()">
 
   <div class="form-row">
     <div class="formItem">
       <label class="distance" for="Email">Type Email</label>
       <input id="Email" name="Email" type="text" class="form-control" placeholder="My Email" formControlName="email">
-      <div class="validation">
+      <div
+        *ngIf="checkControl('email')"
+        class="validation">
         <small>You should type correct email.</small>
       </div>
     </div>
     <div class="formItem">
       <label class="distance" for="password">Create Password</label>
       <input id="password" name="password" type="password" class="form-control" placeholder="My password" formControlName="password">
-      <div class="validation">
+      <div
+        *ngIf="checkControl('password')"
+        class="validation">
         <small>Minimal length should be 4.</small>
       </div>
     </div>
