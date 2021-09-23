@@ -1,4 +1,5 @@
 export interface User {
   email: string
-  password: string
+  password: number
+  returnSecureToken: boolean
 }

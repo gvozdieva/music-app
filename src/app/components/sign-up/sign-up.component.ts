@@ -43,7 +43,8 @@ export class SignUpComponent implements OnInit {
 
     const user: User = {
       email: this.form.value.email,
-      password: this.form.value.password
+      password: this.form.value.password,
+      returnSecureToken: true
     }
     console.log(user)
 
