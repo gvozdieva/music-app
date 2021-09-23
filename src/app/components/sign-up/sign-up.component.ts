@@ -35,11 +35,6 @@ export class SignUpComponent implements OnInit {
     // @ts-ignore
     return this.form.get(name)?.touched && this.form.get(name)?.invalid;
   }
-  /*onSignUp(form: NgForm) {
-    const username = form.value.username
-    const password = form.value.password
-    console.log(username, password)
-  }*/
 
   submit() {
     if (this.form.invalid) {
@@ -50,10 +45,11 @@ export class SignUpComponent implements OnInit {
       email: this.form.value.email,
       password: this.form.value.password
     }
+    console.log(user)
 
     this.auth.login(user).subscribe(() => {
       this.form.reset()
-      this.router.navigate(['/'])
+      this.router.navigate(['/songs/allSongs'])
     })
   }
 
