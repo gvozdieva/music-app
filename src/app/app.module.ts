@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {ListModule} from "test-lib";
+import {BorderModule} from "test-lib";
 
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -14,7 +16,6 @@ import { AllSongsComponent } from './components/all-songs/all-songs.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {AuthService} from "./services/auth.service";
-
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import {AuthService} from "./services/auth.service";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ListModule,
+    BorderModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

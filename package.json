@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "mock:server": "json-server --watch db.json --port=3004"
+    "mock:server": "json-server --watch db.json --port=3004",
+    "lib:build": "ng build test-lib",
+    "lib:watch": "ng build test-lib --watch",
+    "lib:publish": "npm run lib:build && cd dist/test-lib && npm pack && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +42,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^12.0.0",
     "typescript": "~4.2.3"
   }
 }
