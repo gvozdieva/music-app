@@ -16,6 +16,7 @@ import { AllSongsComponent } from './components/all-songs/all-songs.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {AuthService} from "./services/auth.service";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,10 @@ import {AuthService} from "./services/auth.service";
     ListModule,
     BorderModule
   ],
-  providers: [AuthService],
+  providers: [
+    {provide: 'AuthService', useClass: AuthService},
+    {provide: 'ENV', useValue: environment}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
